@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:skywebdesign/signup_sigin_screen/signup_screen/signup_screen.dart';
+import 'package:skywebdesign/views/signup_sigin_screen/signup_screen/signup_screen.dart';
 import 'package:skywebdesign/viewModel/skyweb_controller.dart';
 
 class SignInScreen extends GetView<SkywebController> {

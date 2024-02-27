@@ -1,9 +1,9 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:skywebdesign/splash_screen/first_splash.dart';
-import 'package:skywebdesign/splash_screen/second_splash.dart';
-import 'package:skywebdesign/splash_screen/thrid_splash.dart';
+import 'package:skywebdesign/views/splash_screen/first_splash.dart';
+import 'package:skywebdesign/views/splash_screen/second_splash.dart';
+import 'package:skywebdesign/views/splash_screen/thrid_splash.dart';
 
 class DotWidget extends StatelessWidget {
   const DotWidget({super.key, required this.position});

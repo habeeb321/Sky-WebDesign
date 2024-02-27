@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:skywebdesign/signup_sigin_screen/signin_screen/signin_screen.dart';
+import 'package:skywebdesign/views/signup_sigin_screen/signin_screen/signin_screen.dart';
 
 class SignUpSignInScreen extends StatelessWidget {
   const SignUpSignInScreen({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:skywebdesign/signup_sigin_screen/signup_signin_screen.dart';
-import 'package:skywebdesign/splash_screen/thrid_splash.dart';
-import 'package:skywebdesign/splash_screen/widgets/dot_widget.dart';
+import 'package:skywebdesign/views/signup_sigin_screen/signup_signin_screen.dart';
+import 'package:skywebdesign/views/splash_screen/thrid_splash.dart';
+import 'package:skywebdesign/views/splash_screen/widgets/dot_widget.dart';
 
 class SecondSplash extends StatelessWidget {
   const SecondSplash({super.key});
