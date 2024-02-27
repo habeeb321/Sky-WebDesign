@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import 'package:skywebdesign/views/signup_sigin_screen/signup_screen/signup_screen.dart';
 import 'package:skywebdesign/viewModel/skyweb_controller.dart';
 
-class SignInScreen extends GetView<SkywebController> {
-  const SignInScreen({super.key});
+class LoginScreen extends GetView<SkywebController> {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +134,7 @@ class SignInScreen extends GetView<SkywebController> {
                             height: 35.h,
                             width: double.infinity,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () => controller.sigInpButton(),
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(
                                   const Color(0xffA050FE),

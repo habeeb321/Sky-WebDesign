@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:skywebdesign/viewModel/splash_controller.dart';
 import 'package:skywebdesign/views/signup_sigin_screen/signup_signin_screen.dart';
 import 'package:skywebdesign/views/splash_screen/second_splash.dart';
 import 'package:skywebdesign/views/splash_screen/widgets/dot_widget.dart';
 
-class FirstSplash extends StatelessWidget {
+class FirstSplash extends GetView<SplashController> {
   const FirstSplash({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.put(SplashController());
     return Scaffold(
       appBar: AppBar(
         actions: [
           GestureDetector(
-            onTap: () => Get.to(() => const SignUpSignInScreen()),
+            onTap: () => Get.to(() => const SignUpLoginScreen()),
             child: Text(
               'Skip',
               style: TextStyle(

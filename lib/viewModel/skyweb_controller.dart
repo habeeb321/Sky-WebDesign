@@ -12,21 +12,37 @@ class SkywebController extends GetxController {
   TextEditingController signUpEmailController = TextEditingController();
   TextEditingController signUpPasswordController = TextEditingController();
   final isObscured = true.obs;
+  final isLoading = false.obs;
 
   updateObscureText() {
     isObscured.value = !isObscured.value;
   }
 
-  signUpButton() async {
+  signUpButton() {
+    isLoading.value = true;
     auth
         .createUserWithEmailAndPassword(
-      email: signUpEmailController.text,
-      password: signUpPasswordController.text,
-    )
-        .then((value) {
-      Get.offAll(() => const HomeScreen());
-    }).onError((error, stackTrace) {
+            email: signUpEmailController.text,
+            password: signUpPasswordController.text)
+        .then((value) => Get.offAll(() => const HomeScreen()))
+        .onError((error, stackTrace) {
       print('Error is: $error');
+      return null;
     });
+    isLoading.value = false;
+  }
+
+  sigInpButton() {
+    isLoading.value = true;
+    auth
+        .signInWithEmailAndPassword(
+            email: signInEmailController.text,
+            password: signInPasswordController.text)
+        .then((value) => Get.offAll(() => const HomeScreen()))
+        .onError((error, stackTrace) {
+      print('Error : $error');
+      return null;
+    });
+    isLoading.value = false;
   }
 }

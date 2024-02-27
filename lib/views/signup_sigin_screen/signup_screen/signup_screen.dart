@@ -216,8 +216,8 @@ class SignUpScreen extends GetView<SkywebController> {
                                           color: const Color(0xffA050FE),
                                         ),
                                         recognizer: TapGestureRecognizer()
-                                          ..onTap = () => Get.to(
-                                              () => const SignInScreen()),
+                                          ..onTap = () =>
+                                              Get.to(() => const LoginScreen()),
                                       ),
                                     ],
                                   ),

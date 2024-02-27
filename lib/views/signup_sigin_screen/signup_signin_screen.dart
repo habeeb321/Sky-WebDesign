@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 import 'package:skywebdesign/views/signup_sigin_screen/signin_screen/signin_screen.dart';
+import 'package:skywebdesign/views/signup_sigin_screen/signup_screen/signup_screen.dart';
 
-class SignUpSignInScreen extends StatelessWidget {
-  const SignUpSignInScreen({super.key});
+class SignUpLoginScreen extends StatelessWidget {
+  const SignUpLoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class SignUpSignInScreen extends StatelessWidget {
                   height: 35.h,
                   width: 250.w,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const SignUpScreen()),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                         const Color(0xffA050FE),
@@ -75,7 +76,7 @@ class SignUpSignInScreen extends StatelessWidget {
                   height: 35.h,
                   width: 250.w,
                   child: OutlinedButton(
-                    onPressed: () => Get.to(() => const SignInScreen()),
+                    onPressed: () => Get.to(() => const LoginScreen()),
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),

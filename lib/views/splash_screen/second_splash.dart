@@ -24,7 +24,7 @@ class SecondSplash extends StatelessWidget {
         ),
         actions: [
           GestureDetector(
-            onTap: () => Get.to(() => const SignUpSignInScreen()),
+            onTap: () => Get.to(() => const SignUpLoginScreen()),
             child: Text(
               'Skip',
               style: TextStyle(
