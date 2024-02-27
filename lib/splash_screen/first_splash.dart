@@ -39,7 +39,7 @@ class FirstSplash extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w700,
-                  color: const Color(0xff031432),
+                  color: const Color(0xff0D1A5C),
                 ),
               ),
               SizedBox(height: 20.h),
@@ -52,11 +52,13 @@ class FirstSplash extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 50.h),
-              const Image(
-                image: AssetImage('assets/splashone.png'),
-                fit: BoxFit.cover,
+              const Center(
+                child: Image(
+                  image: AssetImage('assets/splashone.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
-              SizedBox(height: 25.h),
+              SizedBox(height: 30.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -78,7 +80,7 @@ class FirstSplash extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 10.h),
+              const SizedBox(height: 10),
             ],
           ),
         ),
