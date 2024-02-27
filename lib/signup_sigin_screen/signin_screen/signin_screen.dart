@@ -1,15 +1,21 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:skywebdesign/signup_sigin_screen/signup_screen/signup_screen.dart';
+import 'package:skywebdesign/viewModel/skyweb_controller.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends GetView<SkywebController> {
   const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.put(SkywebController());
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => Get.back(),
           icon: const Icon(Icons.arrow_back),
         ),
       ),
@@ -23,9 +29,12 @@ class SignInScreen extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xffF3F3F3),
-                  borderRadius: BorderRadius.circular(50),
+                decoration: const BoxDecoration(
+                  color: Color(0xffF3F3F3),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50),
+                  ),
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
@@ -69,18 +78,37 @@ class SignInScreen extends StatelessWidget {
                           style: TextStyle(fontSize: 11.sp),
                         ),
                         const SizedBox(height: 3),
-                        SizedBox(
-                          height: 40.h,
-                          child: TextFormField(
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              hintText: 'Password',
-                              hintStyle: TextStyle(fontSize: 11.sp),
+                        Obx(
+                          () => SizedBox(
+                            height: 40.h,
+                            child: Stack(
+                              alignment: Alignment.centerRight,
+                              children: [
+                                TextFormField(
+                                  obscureText: controller.isObscured.value,
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    hintText: 'Password',
+                                    hintStyle: TextStyle(fontSize: 11.sp),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () => controller.updateObscureText(),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 20.0),
+                                    child: Icon(
+                                      controller.isObscured.value
+                                          ? Icons.visibility_off
+                                          : Icons.visibility,
+                                      color: const Color(0xffA050FE),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -142,6 +170,9 @@ class SignInScreen extends StatelessWidget {
                                     fontSize: 12.sp,
                                     color: const Color(0xffA050FE),
                                   ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () =>
+                                        Get.to(() => const SignUpScreen()),
                                 ),
                               ],
                             ),
