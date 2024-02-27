@@ -61,10 +61,11 @@ class ThirdSplash extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 50.h),
-              const Center(
+              Center(
                 child: Image(
-                  image: AssetImage('assets/splashthree.png'),
+                  image: const AssetImage('assets/splashthree.png'),
                   fit: BoxFit.cover,
+                  height: 300.h,
                 ),
               ),
               SizedBox(height: 30.h),

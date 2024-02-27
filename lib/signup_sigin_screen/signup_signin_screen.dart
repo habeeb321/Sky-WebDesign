@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
+import 'package:skywebdesign/signup_sigin_screen/signin_screen/signin_screen.dart';
 
 class SignUpSignInScreen extends StatelessWidget {
   const SignUpSignInScreen({super.key});
@@ -34,7 +36,6 @@ class SignUpSignInScreen extends StatelessWidget {
                         image: const AssetImage('assets/mycantor.png'),
                         fit: BoxFit.cover,
                         height: 350.h,
-                        width: double.infinity,
                       ),
                     ],
                   ),
@@ -74,7 +75,7 @@ class SignUpSignInScreen extends StatelessWidget {
                   height: 35.h,
                   width: 250.w,
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const SignInScreen()),
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),

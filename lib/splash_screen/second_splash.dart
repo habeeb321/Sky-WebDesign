@@ -44,10 +44,11 @@ class SecondSplash extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 30.h),
-              const Center(
+              Center(
                 child: Image(
-                  image: AssetImage('assets/splashtwo.png'),
+                  image: const AssetImage('assets/splashtwo.png'),
                   fit: BoxFit.cover,
+                  height: 300.h,
                 ),
               ),
               SizedBox(height: 35.h),
