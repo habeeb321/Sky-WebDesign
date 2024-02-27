@@ -68,6 +68,7 @@ class SignUpScreen extends GetView<SkywebController> {
                               SizedBox(
                                 height: 40.h,
                                 child: TextFormField(
+                                  controller: controller.signUpNameController,
                                   decoration: InputDecoration(
                                     filled: true,
                                     fillColor: Colors.white,
@@ -88,6 +89,7 @@ class SignUpScreen extends GetView<SkywebController> {
                               SizedBox(
                                 height: 40.h,
                                 child: TextFormField(
+                                  controller: controller.signUpPhoneController,
                                   keyboardType: TextInputType.phone,
                                   decoration: InputDecoration(
                                     filled: true,
@@ -109,6 +111,7 @@ class SignUpScreen extends GetView<SkywebController> {
                               SizedBox(
                                 height: 40.h,
                                 child: TextFormField(
+                                  controller: controller.signUpEmailController,
                                   decoration: InputDecoration(
                                     filled: true,
                                     fillColor: Colors.white,
@@ -133,6 +136,8 @@ class SignUpScreen extends GetView<SkywebController> {
                                     alignment: Alignment.centerRight,
                                     children: [
                                       TextFormField(
+                                        controller:
+                                            controller.signUpPasswordController,
                                         obscureText:
                                             controller.isObscured.value,
                                         decoration: InputDecoration(
@@ -170,7 +175,7 @@ class SignUpScreen extends GetView<SkywebController> {
                                   height: 35.h,
                                   width: double.infinity,
                                   child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: () => controller.signUpButton(),
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(

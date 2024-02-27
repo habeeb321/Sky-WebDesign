@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:skywebdesign/views/signup_sigin_screen/signup_screen/signup_screen.dart';
 import 'package:skywebdesign/viewModel/skyweb_controller.dart';
 
@@ -61,6 +60,7 @@ class SignInScreen extends GetView<SkywebController> {
                         SizedBox(
                           height: 40.h,
                           child: TextFormField(
+                            controller: controller.signInEmailController,
                             decoration: InputDecoration(
                               filled: true,
                               fillColor: Colors.white,
@@ -85,6 +85,8 @@ class SignInScreen extends GetView<SkywebController> {
                               alignment: Alignment.centerRight,
                               children: [
                                 TextFormField(
+                                  controller:
+                                      controller.signInPasswordController,
                                   obscureText: controller.isObscured.value,
                                   decoration: InputDecoration(
                                     filled: true,

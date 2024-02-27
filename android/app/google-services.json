@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "128519728200",
+    "project_id": "skyweb-design",
+    "storage_bucket": "skyweb-design.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128519728200:android:57de2126a5406e0936bc7d",
+        "android_client_info": {
+          "package_name": "com.example.skywebdesign"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJmz4_uG2HX9qWJlxUjL1W1vs7bRIkIsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
