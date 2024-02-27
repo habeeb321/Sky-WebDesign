@@ -29,124 +29,126 @@ class SignInScreen extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 45.h),
-                      Center(
-                        child: Text(
-                          'Sign In',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 20.sp,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20.h),
-                      Text(
-                        'Email Address',
-                        style: TextStyle(fontSize: 11.sp),
-                      ),
-                      const SizedBox(height: 3),
-                      SizedBox(
-                        height: 40.h,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            hintText: 'Email',
-                            hintStyle: TextStyle(fontSize: 11.sp),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10.h),
-                      Text(
-                        'Password',
-                        style: TextStyle(fontSize: 11.sp),
-                      ),
-                      const SizedBox(height: 3),
-                      SizedBox(
-                        height: 40.h,
-                        child: TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            hintText: 'Password',
-                            hintStyle: TextStyle(fontSize: 11.sp),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: GestureDetector(
-                          onTap: () {},
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 45.h),
+                        Center(
                           child: Text(
-                            'Forgot Password?',
+                            'Sign In',
                             style: TextStyle(
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 20.sp,
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 20.h),
-                      Center(
-                        child: SizedBox(
-                          height: 35.h,
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                const Color(0xffA050FE),
+                        SizedBox(height: 20.h),
+                        Text(
+                          'Email Address',
+                          style: TextStyle(fontSize: 11.sp),
+                        ),
+                        const SizedBox(height: 3),
+                        SizedBox(
+                          height: 40.h,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                              shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                              ),
+                              hintText: 'Email',
+                              hintStyle: TextStyle(fontSize: 11.sp),
                             ),
+                          ),
+                        ),
+                        SizedBox(height: 10.h),
+                        Text(
+                          'Password',
+                          style: TextStyle(fontSize: 11.sp),
+                        ),
+                        const SizedBox(height: 3),
+                        SizedBox(
+                          height: 40.h,
+                          child: TextFormField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              hintText: 'Password',
+                              hintStyle: TextStyle(fontSize: 11.sp),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: GestureDetector(
+                            onTap: () {},
                             child: Text(
-                              'Sign In',
+                              'Forgot Password?',
                               style: TextStyle(
-                                  color: Colors.white, fontSize: 14.sp),
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 50.h),
-                      Center(
-                        child: Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "I'm a new user. ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12.sp,
+                        SizedBox(height: 20.h),
+                        Center(
+                          child: SizedBox(
+                            height: 35.h,
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                  const Color(0xffA050FE),
+                                ),
+                                shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
                                 ),
                               ),
-                              TextSpan(
-                                text: 'Sign Up',
+                              child: Text(
+                                'Sign In',
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12.sp,
-                                  color: const Color(0xffA050FE),
-                                ),
+                                    color: Colors.white, fontSize: 14.sp),
                               ),
-                            ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 50.h),
+                        Center(
+                          child: Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "I'm a new user. ",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12.sp,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: 'Sign Up',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12.sp,
+                                    color: const Color(0xffA050FE),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
