@@ -17,6 +17,7 @@ class SkywebController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   FlutterSecureStorage storage = const FlutterSecureStorage();
   final isObscured = true.obs;
+  final loading = false.obs;
   RxString userEmail = 'Abc@gmail.com'.obs;
 
   @override
@@ -30,6 +31,7 @@ class SkywebController extends GetxController {
   }
 
   signUpButton() async {
+    loading.value = true;
     try {
       await auth.createUserWithEmailAndPassword(
         email: signUpEmailController.text.trim(),
@@ -37,7 +39,9 @@ class SkywebController extends GetxController {
       );
       storage.write(key: 'email', value: signUpEmailController.text.trim());
       Get.offAll(() => const HomeScreen());
+      loading.value = false;
     } catch (e) {
+      loading.value = false;
       String errorMessage =
           e.toString().substring(e.toString().indexOf(']') + 1);
       if (signUpNameController.text.isEmpty ||
@@ -65,6 +69,7 @@ class SkywebController extends GetxController {
   }
 
   signInButton() async {
+    loading.value = true;
     try {
       await auth.signInWithEmailAndPassword(
         email: signInEmailController.text.trim(),
@@ -72,7 +77,9 @@ class SkywebController extends GetxController {
       );
       storage.write(key: 'email', value: signInEmailController.text.trim());
       Get.offAll(() => const HomeScreen());
+      loading.value = false;
     } catch (e) {
+      loading.value = false;
       if (signInEmailController.text.isEmpty ||
           signInPasswordController.text.isEmpty) {
         Get.snackbar(
