@@ -110,21 +110,21 @@ class LoginScreen extends GetView<SkywebController> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 10),
                         Align(
                           alignment: Alignment.centerRight,
-                          child: GestureDetector(
-                            onTap: () {},
+                          child: TextButton(
+                            onPressed: () {},
                             child: Text(
                               'Forgot Password?',
                               style: TextStyle(
                                 fontSize: 11.sp,
                                 fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 10.h),
                         Center(
                           child: SizedBox(
                             height: 35.h,
