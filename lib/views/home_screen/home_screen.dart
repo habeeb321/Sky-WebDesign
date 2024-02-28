@@ -28,15 +28,6 @@ class HomeScreen extends GetView<SkywebController> {
                 ),
               ),
               SizedBox(height: 10.h),
-              Obx(
-                () => Text(
-                  'Hi, ${controller.userName.value.capitalize}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24.sp,
-                  ),
-                ),
-              ),
               Center(
                 child: Text(
                   'Welcome To',

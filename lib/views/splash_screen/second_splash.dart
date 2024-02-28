@@ -78,13 +78,14 @@ class SecondSplash extends StatelessWidget {
                     onTap: () {
                       Get.to(() => const ThirdSplash());
                     },
-                    child: const CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Color(0xff0D1A5C),
+                    child: CircleAvatar(
+                      radius: 25.r,
+                      backgroundColor: const Color(0xff0D1A5C),
                       child: Text(
                         'Next',
                         style: TextStyle(
                           color: Colors.white,
+                          fontSize: 15.sp,
                         ),
                       ),
                     ),

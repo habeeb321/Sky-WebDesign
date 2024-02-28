@@ -69,13 +69,14 @@ class FirstSplash extends GetView<SplashController> {
                   onTap: () {
                     Get.to(() => const SecondSplash());
                   },
-                  child: const CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Color(0xff0D1A5C),
+                  child: CircleAvatar(
+                    radius: 25.r,
+                    backgroundColor: const Color(0xff0D1A5C),
                     child: Text(
                       'Next',
                       style: TextStyle(
                         color: Colors.white,
+                        fontSize: 15.sp,
                       ),
                     ),
                   ),

@@ -75,13 +75,14 @@ class ThirdSplash extends StatelessWidget {
                   const DotWidget(position: 2),
                   GestureDetector(
                     onTap: () => Get.to(() => const SignUpLoginScreen()),
-                    child: const CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Color(0xff0D1A5C),
+                    child: CircleAvatar(
+                      radius: 25.r,
+                      backgroundColor: const Color(0xff0D1A5C),
                       child: Text(
                         'Start',
                         style: TextStyle(
                           color: Colors.white,
+                          fontSize: 15.sp,
                         ),
                       ),
                     ),
