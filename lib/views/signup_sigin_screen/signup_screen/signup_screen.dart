@@ -85,6 +85,10 @@ class SignUpScreen extends GetView<SkywebController> {
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                             ),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                              horizontal: 10,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -107,6 +111,10 @@ class SignUpScreen extends GetView<SkywebController> {
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                             ),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                              horizontal: 10,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -127,6 +135,10 @@ class SignUpScreen extends GetView<SkywebController> {
                                             border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10),
+                                            ),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                              horizontal: 10,
                                             ),
                                           ),
                                         ),
@@ -155,6 +167,11 @@ class SignUpScreen extends GetView<SkywebController> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             10),
+                                                  ),
+                                                  contentPadding:
+                                                      const EdgeInsets
+                                                          .symmetric(
+                                                    horizontal: 10,
                                                   ),
                                                 ),
                                               ),

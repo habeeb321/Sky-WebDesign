@@ -75,6 +75,9 @@ class LoginScreen extends GetView<SkywebController> {
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 10,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -101,6 +104,10 @@ class LoginScreen extends GetView<SkywebController> {
                                           border: OutlineInputBorder(
                                             borderRadius:
                                                 BorderRadius.circular(10),
+                                          ),
+                                          contentPadding:
+                                              const EdgeInsets.symmetric(
+                                            horizontal: 10,
                                           ),
                                         ),
                                       ),
