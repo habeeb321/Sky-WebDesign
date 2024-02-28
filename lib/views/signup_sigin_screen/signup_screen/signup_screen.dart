@@ -75,8 +75,6 @@ class SignUpScreen extends GetView<SkywebController> {
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    hintText: 'Full Name',
-                                    hintStyle: TextStyle(fontSize: 11.sp),
                                   ),
                                 ),
                               ),
@@ -97,8 +95,6 @@ class SignUpScreen extends GetView<SkywebController> {
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    hintText: 'Phone Number',
-                                    hintStyle: TextStyle(fontSize: 11.sp),
                                   ),
                                 ),
                               ),
@@ -118,8 +114,6 @@ class SignUpScreen extends GetView<SkywebController> {
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    hintText: 'Email',
-                                    hintStyle: TextStyle(fontSize: 11.sp),
                                   ),
                                 ),
                               ),
@@ -147,8 +141,6 @@ class SignUpScreen extends GetView<SkywebController> {
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                           ),
-                                          hintText: 'Password',
-                                          hintStyle: TextStyle(fontSize: 11.sp),
                                         ),
                                       ),
                                       GestureDetector(

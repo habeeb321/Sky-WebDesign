@@ -67,8 +67,6 @@ class LoginScreen extends GetView<SkywebController> {
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              hintText: 'Email',
-                              hintStyle: TextStyle(fontSize: 11.sp),
                             ),
                           ),
                         ),
@@ -94,8 +92,6 @@ class LoginScreen extends GetView<SkywebController> {
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    hintText: 'Password',
-                                    hintStyle: TextStyle(fontSize: 11.sp),
                                   ),
                                 ),
                                 GestureDetector(
