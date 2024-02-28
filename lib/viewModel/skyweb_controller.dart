@@ -13,6 +13,7 @@ class SkywebController extends GetxController {
   TextEditingController signUpPhoneController = TextEditingController();
   TextEditingController signUpEmailController = TextEditingController();
   TextEditingController signUpPasswordController = TextEditingController();
+  TextEditingController forgotPasswordController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   FlutterSecureStorage storage = const FlutterSecureStorage();
   final isObscured = true.obs;
@@ -32,11 +33,11 @@ class SkywebController extends GetxController {
   signUpButton() async {
     try {
       await auth.createUserWithEmailAndPassword(
-        email: signUpEmailController.text,
-        password: signUpPasswordController.text,
+        email: signUpEmailController.text.trim(),
+        password: signUpPasswordController.text.trim(),
       );
-      storage.write(key: 'name', value: signUpNameController.text);
-      storage.write(key: 'email', value: signUpEmailController.text);
+      storage.write(key: 'name', value: signUpNameController.text.trim());
+      storage.write(key: 'email', value: signUpEmailController.text.trim());
       Get.offAll(() => const HomeScreen());
     } catch (e) {
       String errorMessage =
@@ -68,10 +69,10 @@ class SkywebController extends GetxController {
   signInButton() async {
     try {
       await auth.signInWithEmailAndPassword(
-        email: signInEmailController.text,
-        password: signInPasswordController.text,
+        email: signInEmailController.text.trim(),
+        password: signInPasswordController.text.trim(),
       );
-      storage.write(key: 'email', value: signInEmailController.text);
+      storage.write(key: 'email', value: signInEmailController.text.trim());
       Get.offAll(() => const HomeScreen());
     } catch (e) {
       if (signInEmailController.text.isEmpty ||
@@ -120,5 +121,46 @@ class SkywebController extends GetxController {
   void getDetails() async {
     userName.value = await storage.read(key: 'name') ?? '';
     userEmail.value = await storage.read(key: 'email') ?? '';
+  }
+
+  void resetPassword() async {
+    try {
+      await auth.sendPasswordResetEmail(
+          email: forgotPasswordController.text.trim());
+      Get.defaultDialog(
+        title: "Reset",
+        content: const Text("Password reset link sent! check your email"),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Get.back();
+              forgotPasswordController.clear();
+            },
+            child: const Text("Ok"),
+          ),
+        ],
+      );
+    } catch (e) {
+      String errorMessage =
+          e.toString().substring(e.toString().indexOf(']') + 1);
+      if (forgotPasswordController.text.isEmpty) {
+        Get.snackbar(
+          'Error',
+          'Field cannot be empty',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.red,
+          colorText: Colors.white,
+        );
+        return;
+      }
+
+      Get.snackbar(
+        'Error',
+        errorMessage,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+      );
+    }
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:skywebdesign/views/signup_sigin_screen/signin_screen/forgot_password.dart';
 import 'package:skywebdesign/views/signup_sigin_screen/signup_screen/signup_screen.dart';
 import 'package:skywebdesign/viewModel/skyweb_controller.dart';
 
@@ -113,7 +114,8 @@ class LoginScreen extends GetView<SkywebController> {
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () =>
+                                Get.to(() => const ForgotPassword()),
                             child: Text(
                               'Forgot Password?',
                               style: TextStyle(
