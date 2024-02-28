@@ -16,6 +16,14 @@ class SkywebController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   FlutterSecureStorage storage = const FlutterSecureStorage();
   final isObscured = true.obs;
+  RxString userName = 'Sir'.obs;
+  RxString userEmail = 'Abc@gmail.com'.obs;
+
+  @override
+  void onInit() {
+    getDetails();
+    super.onInit();
+  }
 
   updateObscureText() {
     isObscured.value = !isObscured.value;
@@ -27,6 +35,8 @@ class SkywebController extends GetxController {
         email: signUpEmailController.text,
         password: signUpPasswordController.text,
       );
+      storage.write(key: 'name', value: signUpNameController.text);
+      storage.write(key: 'email', value: signUpEmailController.text);
       Get.offAll(() => const HomeScreen());
     } catch (e) {
       String errorMessage =
@@ -61,6 +71,7 @@ class SkywebController extends GetxController {
         email: signInEmailController.text,
         password: signInPasswordController.text,
       );
+      storage.write(key: 'email', value: signInEmailController.text);
       Get.offAll(() => const HomeScreen());
     } catch (e) {
       if (signInEmailController.text.isEmpty ||
@@ -104,5 +115,10 @@ class SkywebController extends GetxController {
         ),
       ],
     );
+  }
+
+  void getDetails() async {
+    userName.value = await storage.read(key: 'name') ?? '';
+    userEmail.value = await storage.read(key: 'email') ?? '';
   }
 }

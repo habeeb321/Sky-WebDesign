@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:skywebdesign/viewModel/skyweb_controller.dart';
 
 class HomeScreen extends GetView<SkywebController> {
@@ -26,11 +28,13 @@ class HomeScreen extends GetView<SkywebController> {
                 ),
               ),
               SizedBox(height: 10.h),
-              Text(
-                'Hi, Habeebu',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24.sp,
+              Obx(
+                () => Text(
+                  'Hi, ${controller.userName.value.capitalize}',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24.sp,
+                  ),
                 ),
               ),
               Center(
@@ -51,12 +55,14 @@ class HomeScreen extends GetView<SkywebController> {
                   ),
                 ),
               ),
-              Center(
-                child: Text(
-                  'habeebrh321@gmail.com',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
+              Obx(
+                () => Center(
+                  child: Text(
+                    controller.userEmail.value,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.sp,
+                    ),
                   ),
                 ),
               ),
