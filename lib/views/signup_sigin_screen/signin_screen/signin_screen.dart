@@ -134,7 +134,7 @@ class LoginScreen extends GetView<SkywebController> {
                             height: 35.h,
                             width: double.infinity,
                             child: ElevatedButton(
-                              onPressed: () => controller.sigInpButton(),
+                              onPressed: () => controller.signInButton(),
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(
                                   const Color(0xffA050FE),
