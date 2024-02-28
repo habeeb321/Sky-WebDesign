@@ -1,27 +1,75 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:skywebdesign/views/signup_sigin_screen/signin_screen/signin_screen.dart';
+import 'package:skywebdesign/viewModel/skyweb_controller.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView<SkywebController> {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.put(SkywebController());
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Screen'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: ElevatedButton.icon(
-          onPressed: () {
-            FirebaseAuth.instance.signOut().then((value) {
-              Get.offAll(() => const LoginScreen());
-            });
-          },
-          icon: const Icon(Icons.logout),
-          label: const Text('Logout'),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CircleAvatar(
+                radius: 80.r,
+                backgroundColor: Colors.black,
+                child: Image(
+                  image: const AssetImage('assets/skyweblogo.png'),
+                  fit: BoxFit.cover,
+                  height: 60.h,
+                ),
+              ),
+              SizedBox(height: 10.h),
+              Text(
+                'Hi, Habeebu',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24.sp,
+                ),
+              ),
+              Center(
+                child: Text(
+                  'Welcome To',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp,
+                  ),
+                ),
+              ),
+              Center(
+                child: Text(
+                  'SkyWeb Design',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp,
+                  ),
+                ),
+              ),
+              Center(
+                child: Text(
+                  'habeebrh321@gmail.com',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              ElevatedButton.icon(
+                onPressed: () => controller.logout(),
+                icon: const Icon(Icons.logout),
+                label: const Text('Logout'),
+              ),
+            ],
+          ),
         ),
       ),
     );

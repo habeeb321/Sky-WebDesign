@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:skywebdesign/views/home_screen/home_screen.dart';
+import 'package:skywebdesign/views/signup_sigin_screen/signin_screen/signin_screen.dart';
 
 class SkywebController extends GetxController {
   var auth = FirebaseAuth.instance;
@@ -12,6 +14,7 @@ class SkywebController extends GetxController {
   TextEditingController signUpEmailController = TextEditingController();
   TextEditingController signUpPasswordController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  FlutterSecureStorage storage = const FlutterSecureStorage();
   final isObscured = true.obs;
 
   updateObscureText() {
@@ -80,5 +83,26 @@ class SkywebController extends GetxController {
         colorText: Colors.white,
       );
     }
+  }
+
+  void logout() {
+    Get.defaultDialog(
+      title: "Logout Confirmation",
+      content: const Text("Are you sure you want to logout?"),
+      actions: [
+        TextButton(
+          onPressed: () {
+            auth.signOut().then((value) {
+              Get.offAll(() => const LoginScreen());
+            });
+          },
+          child: const Text("Yes"),
+        ),
+        TextButton(
+          onPressed: () => Get.back(),
+          child: const Text("No"),
+        ),
+      ],
+    );
   }
 }
